@@ -11,9 +11,12 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
             .allowedOrigins(
-                "https://feedback-system-frontend-xdyx.onrender.com"
+                "https://feedback-system-frontend-xdyx.onrender.com",
+                "http://localhost:5173",
+                "http://localhost:5175"
             )
             .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH")
-            .allowedHeaders("*");
+            .allowedHeaders("*")
+            .allowCredentials(false);
     }
 }
